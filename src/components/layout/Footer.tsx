@@ -5,8 +5,9 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-[#0B0B0F]">
       <Container className="flex flex-col gap-3 py-8 text-sm text-[#BDBDBD] sm:flex-row sm:items-center sm:justify-between">
         <p>&copy; {new Date().getFullYear()} The RAMAH Church.</p>
-        <p>Rooted in Christ. Growing in faith. Serving with love.</p>
+        <p>Love for God. Love for his people. Excellence in service</p>
       </Container>
     </footer>
   );
 }
+
