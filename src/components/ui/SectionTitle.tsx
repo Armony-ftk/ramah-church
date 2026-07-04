@@ -15,27 +15,21 @@ export default function SectionTitle({
 }: SectionTitleProps) {
   return (
     <div
-      className={[
-        "max-w-3xl",
-        centered && "mx-auto text-center",
-        className,
-      ]
+      className={["max-w-3xl", centered && "mx-auto text-center", className]
         .filter(Boolean)
         .join(" ")}
     >
-      {eyebrow ? (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#8D63D2]">
-          {eyebrow}
-        </p>
-      ) : null}
-
-      <h2 className="font-heading text-3xl font-bold text-[#FFFFFF] sm:text-4xl">
+      <h2 className="font-heading text-3xl font-bold text-[#FFFFFF] sm:text-5xl">
         {title}
       </h2>
 
       {description ? (
-        <p className="mt-4 text-base leading-7 text-[#BDBDBD]">
-          {description}
+        <p className="mt-2 text-base leading-7 text-[#BDBDBD]">{description}</p>
+      ) : null}
+
+      {eyebrow ? (
+        <p className="mt-5 mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#8D63D2]">
+          {eyebrow}
         </p>
       ) : null}
     </div>
