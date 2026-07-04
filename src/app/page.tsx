@@ -1,4 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
+import FeaturedSermonSection from "@/components/sections/FeaturedSermonSection";
 import ServiceTimesSection from "@/components/sections/ServiceTimesSection";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <HeroSection />
       <ServiceTimesSection />
+      <FeaturedSermonSection />
     </>
   );
 }
