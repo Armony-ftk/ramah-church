@@ -1,5 +1,6 @@
 import HeroSection from "@/components/sections/HeroSection";
 import FeaturedSermonSection from "@/components/sections/FeaturedSermonSection";
+import FindUsSection from "@/components/sections/FindUsSection";
 import MinistriesPreviewSection from "@/components/sections/MinistriesPreviewSection";
 import ServiceTimesSection from "@/components/sections/ServiceTimesSection";
 import SupportMissionSection from "@/components/sections/SupportMissionSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <UpcomingEventsSection />
       <MinistriesPreviewSection />
       <SupportMissionSection />
+      <FindUsSection />
     </>
   );
 }
