@@ -22,7 +22,7 @@ type ButtonElementProps = ButtonBaseProps &
 type ButtonProps = ButtonLinkProps | ButtonElementProps;
 
 const baseClasses =
-  "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8D63D2] disabled:pointer-events-none disabled:opacity-60";
+  "inline-flex cursor-pointer items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8D63D2] disabled:pointer-events-none disabled:opacity-60";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "bg-[#6A3FB5] text-[#FFFFFF] hover:bg-[#8D63D2]",
