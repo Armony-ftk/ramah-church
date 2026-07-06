@@ -34,7 +34,7 @@ export default function ServiceTimesSection() {
         />
 
         <div
-          className="mt-10 grid gap-5 sm:grid-cols-2"
+          className="mt-3 grid gap-5 sm:grid-cols-2"
           aria-label="Weekly service schedule"
         >
           {services.map((service) => (
