@@ -1,3 +1,4 @@
+import MeetOurLeadersSection from "@/components/sections/about/MeetOurLeadersSection";
 import OurHistorySection from "@/components/sections/about/OurHistorySection";
 import PageHero from "@/components/sections/PageHero";
 
@@ -10,6 +11,7 @@ export default function AboutPage() {
         description="Learn about the story, the people, and the vision behind The RAMAH Church."
       />
       <OurHistorySection />
+      <MeetOurLeadersSection />
     </>
   );
 }
