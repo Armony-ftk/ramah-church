@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Container from "@/components/layout/Container";
 import { navigationItems, type NavigationItem } from "@/data/navigation";
+
+const SCROLLED_THRESHOLD = 12;
 
 function isActivePath(pathname: string, href: string) {
   if (href === "/") {
@@ -69,9 +71,40 @@ function NavLink({
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    function updateScrollState() {
+      const nextIsScrolled = window.scrollY > SCROLLED_THRESHOLD;
+
+      setIsScrolled((current) => {
+        if (current === nextIsScrolled) {
+          return current;
+        }
+
+        return nextIsScrolled;
+      });
+    }
+
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollState);
+    };
+  }, []);
 
   return (
-    <header className="border-b border-white/10 bg-[#0B0B0F]">
+    <header
+      className={[
+        "sticky top-0 z-50 border-b transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300",
+        isScrolled
+          ? "border-white/15 bg-[#0B0B0F] shadow-lg shadow-black/20 backdrop-blur-md"
+          : "border-white/10 bg-[#0B0B0F]/95 shadow-none backdrop-blur-0",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
       <Container className="flex min-h-20 items-center justify-between gap-8">
         <Link
           href="/"
