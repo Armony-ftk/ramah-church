@@ -1,4 +1,5 @@
 import MeetOurLeadersSection from "@/components/sections/about/MeetOurLeadersSection";
+import OurBeliefsSection from "@/components/sections/about/OurBeliefsSection";
 import OurHistorySection from "@/components/sections/about/OurHistorySection";
 import PageHero from "@/components/sections/PageHero";
 
@@ -12,6 +13,7 @@ export default function AboutPage() {
       />
       <OurHistorySection />
       <MeetOurLeadersSection />
+      <OurBeliefsSection />
     </>
   );
 }
