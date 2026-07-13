@@ -10,7 +10,7 @@ export const services: Service[] = [
   {
     title: "Sunday Celebration Service",
     day: "Sunday",
-    time: "9:00 AM - 11:00 AM",
+    time: "9:00 AM - 11:30 AM",
     description: "Intense praise and worship. Edifying teachings.",
     label: "Main Gathering",
   },

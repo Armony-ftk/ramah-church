@@ -6,6 +6,40 @@ export type Ministry = {
   href: string;
 };
 
+export type MinistriesPageContent = {
+  hero: {
+    eyebrow: string;
+    title: string;
+    description: string;
+  };
+  overview: {
+    title: string;
+    description: string;
+    image: {
+      src: string;
+      alt: string;
+    };
+  };
+};
+
+export const ministriesPageContent: MinistriesPageContent = {
+  hero: {
+    eyebrow: "Our Ministries",
+    title: "Explore Our Ministries",
+    description:
+      "God designed us to grow in community. Discover ministries where you can grow.",
+  },
+  overview: {
+    title: "Find Your Place",
+    description:
+      "Everyone belongs somewhere. Whether you're a child, student, young adult, parent, or professional, there's a place for you to grow in your faith, build meaningful relationships, and serve with purpose.",
+    image: {
+      src: "/images/ministries/ramah-ministries-overview.webp",
+      alt: "RAMAH Church member raising hand",
+    },
+  },
+};
+
 export const ministries: Ministry[] = [
   {
     title: "RAMAH Kidz",
