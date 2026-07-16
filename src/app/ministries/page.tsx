@@ -1,4 +1,5 @@
 import MinistriesOverviewSection from "@/components/sections/ministries/MinistriesOverviewSection";
+import MinistriesGridSection from "@/components/sections/MinistriesGridSection";
 import PageHero from "@/components/sections/PageHero";
 import { ministriesPageContent } from "@/data/ministries";
 
@@ -13,6 +14,11 @@ export default function MinistriesPage() {
         description={hero.description}
       />
       <MinistriesOverviewSection />
+      <MinistriesGridSection
+        title="Ministries Highlights"
+        description="Learn more about each ministry and discover where you can thrive."
+        showCta={false}
+      />
     </>
   );
 }
