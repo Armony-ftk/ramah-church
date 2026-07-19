@@ -1,10 +1,10 @@
-import MinistriesOverviewSection from "@/components/sections/ministries/MinistriesOverviewSection";
+import MinistryOverviewSection from "@/components/sections/ministries/MinistryOverviewSection";
 import MinistriesGridSection from "@/components/sections/MinistriesGridSection";
 import PageHero from "@/components/sections/PageHero";
 import { ministriesPageContent } from "@/data/ministries";
 
 export default function MinistriesPage() {
-  const { hero } = ministriesPageContent;
+  const { hero, overview } = ministriesPageContent;
 
   return (
     <>
@@ -13,7 +13,12 @@ export default function MinistriesPage() {
         title={hero.title}
         description={hero.description}
       />
-      <MinistriesOverviewSection />
+      <MinistryOverviewSection
+        headingId="ministries-overview-title"
+        title={overview.title}
+        paragraphs={[overview.description]}
+        image={overview.image}
+      />
       <MinistriesGridSection
         title="Ministries Highlights"
         description="Learn more about each ministry and discover where you can thrive."

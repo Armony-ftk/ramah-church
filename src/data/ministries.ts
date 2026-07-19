@@ -1,9 +1,40 @@
+export type MinistryHeroDetails = {
+  eyebrow: string;
+  description: string;
+};
+
+export type MinistryOverviewDetails = {
+  title: string;
+  description: string;
+  paragraphs: string[];
+  imageAlt: string;
+};
+
+export type MinistryMeetingDetails = {
+  title: string;
+  description: string;
+  prefix: string;
+  highlightedSchedule: string;
+  suffix: string;
+  linkPrefix: string;
+  linkLabel: string;
+  linkHref: string;
+  linkSuffix: string;
+};
+
+export type MinistryDetails = {
+  hero: MinistryHeroDetails;
+  overview: MinistryOverviewDetails;
+  meeting: MinistryMeetingDetails;
+};
+
 export type Ministry = {
   title: string;
   slug: string;
   description: string;
   image: string;
   href: string;
+  details?: MinistryDetails;
 };
 
 export type MinistriesPageContent = {
@@ -64,6 +95,36 @@ export const ministries: Ministry[] = [
       "A ministry empowering women to grow in faith, wisdom, purpose, and godly influence.",
     image: "/images/ministries/women-of-worth.jpeg",
     href: "/ministries/women-of-worth",
+    details: {
+      hero: {
+        eyebrow: "OUR WOMEN MINISTRY",
+        description:
+          "A community where women grow in faith, wisdom, purpose, and godly influence.",
+      },
+      overview: {
+        title: "EMPOWERING WOMEN",
+        description: "Discover the purpose of the Women of Worth ministry.",
+        // Temporary placeholder copy pending official ministry wording from the church.
+        paragraphs: [
+          "Women of Worth is a community created to help women deepen their relationship with God, grow in wisdom, and walk confidently in their God-given purpose. Through biblical teaching, prayer, fellowship, and meaningful relationships, women from different generations and seasons of life are encouraged, strengthened, and equipped to make a godly impact in their homes, church, workplaces, and communities.",
+        ],
+        imageAlt:
+          "Women gathered during a Women of Worth ministry event at The RAMAH Church",
+      },
+      meeting: {
+        title: "MEETING TIMES",
+        description: "Stay connected with our regular gatherings.",
+        prefix: "Women of Worth gathers every",
+        highlightedSchedule: "SECOND SATURDAY",
+        suffix:
+          "of the month unless a specific change is announced.",
+        linkPrefix: "You can also check the",
+        linkLabel: "upcoming events on our homepage",
+        linkHref: "/#upcoming-events-list",
+        linkSuffix:
+          "for the latest ministry gatherings and special events.",
+      },
+    },
   },
   {
     title: "Men of Honour",
