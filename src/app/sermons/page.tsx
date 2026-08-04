@@ -1,5 +1,6 @@
 import PageHero from "@/components/sections/PageHero";
 import RecentSermonsSection from "@/components/sections/sermons/RecentSermonsSection";
+import TeachingSeriesSection from "@/components/sections/sermons/TeachingSeriesSection";
 
 export default function SermonsPage() {
   return (
@@ -10,6 +11,7 @@ export default function SermonsPage() {
         description="Be transformed, strengthened, and encouraged by the Word of God."
       />
       <RecentSermonsSection />
+      <TeachingSeriesSection />
     </>
   );
 }

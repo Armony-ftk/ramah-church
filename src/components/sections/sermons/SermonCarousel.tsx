@@ -1,46 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
+import YouTubeThumbnail from "@/components/sections/sermons/YouTubeThumbnail";
 import Button from "@/components/ui/Button";
-import {
-  getYouTubeThumbnailUrl,
-  type Sermon,
-} from "@/data/sermons";
+import type { Sermon } from "@/data/sermons";
 
 type SermonCarouselProps = {
   sermons: Sermon[];
 };
-
-type SermonThumbnailProps = {
-  sermon: Sermon;
-};
-
-function SermonThumbnail({ sermon }: SermonThumbnailProps) {
-  const fallbackUrl = getYouTubeThumbnailUrl(
-    sermon.youtubeVideoId,
-    "hqdefault",
-  );
-  const [thumbnailUrl, setThumbnailUrl] = useState(() =>
-    getYouTubeThumbnailUrl(sermon.youtubeVideoId),
-  );
-
-  return (
-    <Image
-      src={thumbnailUrl}
-      alt={`Thumbnail for ${sermon.title}`}
-      fill
-      sizes="(min-width: 1152px) 673px, (min-width: 1024px) 60vw, (min-width: 640px) calc(100vw - 64px), calc(100vw - 48px)"
-      className="object-cover transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none"
-      onError={() => {
-        if (thumbnailUrl !== fallbackUrl) {
-          setThumbnailUrl(fallbackUrl);
-        }
-      }}
-    />
-  );
-}
 
 function ArrowIcon({ direction }: { direction: "left" | "right" }) {
   return (
@@ -108,7 +76,12 @@ export default function SermonCarousel({ sermons }: SermonCarouselProps) {
                     tabIndex={isActive ? 0 : -1}
                     className="group relative block aspect-video overflow-hidden bg-[#0B0B0F] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#8D63D2]"
                   >
-                    <SermonThumbnail sermon={sermon} />
+                    <YouTubeThumbnail
+                      videoId={sermon.youtubeVideoId}
+                      alt={`Thumbnail for ${sermon.title}`}
+                      sizes="(min-width: 1152px) 673px, (min-width: 1024px) 60vw, (min-width: 640px) calc(100vw - 64px), calc(100vw - 48px)"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none"
+                    />
                     <span
                       aria-hidden="true"
                       className="absolute inset-0 bg-[#0B0B0F]/25 transition-colors duration-300 group-hover:bg-[#0B0B0F]/10 motion-reduce:transition-none"
