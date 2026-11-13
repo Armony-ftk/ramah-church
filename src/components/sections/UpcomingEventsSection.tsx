@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
+import Reveal from "@/components/ui/Reveal";
 import SectionTitle from "@/components/ui/SectionTitle";
 import { events, type Event } from "@/data/events";
 
@@ -12,14 +13,14 @@ const INITIAL_EVENT_COUNT = 2;
 
 function EventCard({ event }: { event: Event }) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-[#16161D] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
+    <Reveal as="article" className="flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-[#16161D] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         <Image
           src={event.image}
           alt={`${event.title} event artwork`}
           fill
           sizes="(min-width: 1024px) 528px, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition-transform duration-500 hover:scale-[1.03]"
+          className="object-cover transition-transform duration-500 motion-safe:hover:scale-[1.03] motion-reduce:scale-100 motion-reduce:transition-none"
         />
       </div>
 
@@ -49,7 +50,7 @@ function EventCard({ event }: { event: Event }) {
           </p>
         ) : null}
       </div>
-    </article>
+    </Reveal>
   );
 }
 
@@ -79,27 +80,40 @@ export default function UpcomingEventsSection() {
           centered
         />
 
-        <div
-          id="upcoming-events-list"
-          className="mt-10 grid gap-6 sm:grid-cols-2"
-          aria-label="Upcoming church events"
-        >
-          {visibleEvents.map((event) => (
-            <EventCard key={`${event.date}-${event.title}`} event={event} />
-          ))}
-        </div>
-
-        <div className="mt-9 flex justify-center">
-          <Button
-            type="button"
-            aria-controls="upcoming-events-list"
-            aria-expanded={showAllEvents}
-            onClick={() => setShowAllEvents((currentValue) => !currentValue)}
-            className="w-full sm:w-auto"
+        {sortedEvents.length === 0 ? (
+          <div className="mt-10 text-center">
+            <p className="text-base font-semibold text-[#F7F2FF]">
+              No upcoming events at the moment.
+            </p>
+            <p className="mt-2 text-base leading-7 text-[#BDBDBD]">
+              Check back soon to see what&apos;s happening at The RAMAH Church.
+            </p>
+          </div>
+        ) : (
+          <div
+            id="upcoming-events-list"
+            className="mt-10 grid gap-6 sm:grid-cols-2"
+            aria-label="Upcoming church events"
           >
-            {showAllEvents ? "See Less" : "View All Events"}
-          </Button>
-        </div>
+            {visibleEvents.map((event) => (
+              <EventCard key={`${event.date}-${event.title}`} event={event} />
+            ))}
+          </div>
+        )}
+
+        {sortedEvents.length > INITIAL_EVENT_COUNT && (
+          <div className="mt-9 flex justify-center">
+            <Button
+              type="button"
+              aria-controls="upcoming-events-list"
+              aria-expanded={showAllEvents}
+              onClick={() => setShowAllEvents((currentValue) => !currentValue)}
+              className="w-full sm:w-auto"
+            >
+              {showAllEvents ? "See Less" : "View All Events"}
+            </Button>
+          </div>
+        )}
       </Container>
     </section>
   );

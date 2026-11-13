@@ -1,3 +1,4 @@
+import Reveal from "@/components/ui/Reveal";
 import type { Belief } from "@/data/about";
 
 type BeliefAccordionCardProps = {
@@ -15,7 +16,8 @@ export default function BeliefAccordionCard({
   const contentId = `belief-content-${belief.id}`;
 
   return (
-    <article
+    <Reveal
+      as="article"
       className={`self-start overflow-hidden rounded-lg border bg-[#16161D] transition-colors duration-200 motion-reduce:transition-none ${
         isOpen
           ? "border-[#8D63D2]/70 bg-[#0B0B0F]"
@@ -69,6 +71,6 @@ export default function BeliefAccordionCard({
           </p>
         </div>
       </div>
-    </article>
+    </Reveal>
   );
 }

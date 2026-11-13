@@ -74,125 +74,101 @@ export const aboutLeaders: AboutLeaders = {
   ],
 };
 
-// TEMPORARY PLACEHOLDER CONTENT: This statement of faith is not yet the final approved RAMAH Church doctrine. Replace it with the official church statement of faith before production deployment.
 export const beliefs: Belief[] = [
   {
     id: "scriptures",
     title: "The Scriptures",
     statement:
-      "We believe in the Scriptures of the Old and New Testaments, in their original writing, as fully inspired by God, and we accept them as the supreme and final authority for faith and life.",
+      "We believe in the scripture of the Old and New Testaments in their original writings as fully inspired of God (2 Timothy 3:16-17) and accept them as the supreme and final authority (Isaiah 40:8; Hebrews 4:12-13 (V12); 1 Peter 1:23-25) for faith (Romans 10:17) and life (Joshua 1:8; Psalms 19:7-8; James 1:22-25).",
   },
   {
     id: "trinity",
     title: "The Trinity",
     statement:
-      "We believe in one God, eternally existing in three Persons: Father, Son, and Holy Spirit.",
+      "We believe in one God, eternally existing in three Persons — Father, Son and Holy Spirit (Matthew 28:18-19).",
   },
   {
     id: "jesus-christ",
     title: "Jesus Christ",
     statement:
-      "We believe that Jesus Christ was begotten of the Father, conceived by the Holy Spirit, born of the Virgin Mary, and is true God and true man.",
+      "We believe that Jesus Christ was begotten of the Father (John 6:28-33), conceived by the Holy Spirit (Luke 1:29-35), born of the Virgin Mary (Luke 2:1-7) and is true God and true man (Micah 5:1).",
   },
   {
     id: "humanity-and-sin",
     title: "Humanity and Sin",
     statement:
-      "We believe that God created humanity in His own image; that humanity sinned and thereby incurred the penalty of sin, which is death both physically and spiritually; and that all human beings inherit a sinful nature that results in personal transgression and guilt.",
+      "We believe that God created man in His own image (Genesis 3), that all human beings inherit a sinful nature which issues, in the case of those who reach moral responsibility, in actual transgression involving personal guilt.",
   },
   {
-    id: "salvation",
-    title: "Salvation",
+    id: "christs-sacrifice",
+    title: "Christ’s Sacrifice",
     statement:
-      "We believe that the Lord Jesus Christ died for our sins as a substitutionary sacrifice according to the Scriptures, and that all who believe in Him are justified on the grounds of His shed blood.",
+      "We believe that the Lord Jesus Christ died for our sins (1 John 2:2) as a substitute sacrifice (Isaiah 53:4-6, 12, last part) according to the Scriptures and that all who believe in Him are justified on the grounds of His shed blood (Ephesians 1:7).",
   },
   {
     id: "resurrection-and-ascension",
     title: "Resurrection and Ascension",
     statement:
-      "We believe in the bodily resurrection of the Lord Jesus Christ, His ascension into Heaven, and His present ministry as our High Priest and Advocate.",
+      "We believe in the bodily resurrection of the Lord Jesus (Luke 24:1-12, 13-49), His ascension into heaven (Luke 24:50-53; Acts 1:6-11), and His present life as our High Priest and Advocate (Hebrews 4:14-16).",
   },
   {
     id: "christs-return",
     title: "Christ’s Return",
-    statement: "We believe in the personal return of the Lord Jesus Christ.",
+    statement:
+      "We believe in the personal return of the Lord Jesus Christ for eternal reward to the just and eternal domination for the unjust (Matthew 25:31-46).",
   },
   {
     id: "new-birth",
     title: "The New Birth",
     statement:
-      "We believe that all who repent of their sins and receive the Lord Jesus Christ by faith are born again by the Holy Spirit and thereby become children of God.",
+      "We believe that all who repent of their sin and receive the Lord Jesus Christ by faith are born again of the Holy Spirit (John 7:38-39) and thereby become children of God (John 1:12; Romans 8:14-15).",
   },
   {
-    id: "great-commission",
-    title: "The Great Commission",
+    id: "water-baptism",
+    title: "Water Baptism",
     statement:
-      "We believe that the church is responsible for making disciples of all nations and helping those disciples become established and active within the local church.",
-  },
-  {
-    id: "eternity",
-    title: "Eternity",
-    statement:
-      "We believe in the resurrection of both the just and the unjust, the eternal blessedness of the redeemed, and the eternal separation of those who reject the offer of salvation.",
+      "We believe in the baptism of water by immersion (deep water) (Matthew 28:18-19).",
   },
   {
     id: "holy-spirit",
     title: "The Holy Spirit",
     statement:
-      "We believe in the baptism in the Holy Spirit, empowering and equipping believers for service, together with the supernatural gifts of the Holy Spirit and an active fellowship with Him.",
+      "We believe in the baptism of the Holy Spirit (Matthew 28:18-19), who empowers and equips believers for service, with the natural or spiritual gifts.",
   },
   {
-    id: "fivefold-ministry",
-    title: "Fivefold Ministry",
+    id: "breaking-of-bread",
+    title: "The Breaking of Bread",
     statement:
-      "We believe in the divinely ordained ministries of Apostle, Prophet, Evangelist, Pastor, and Teacher.",
+      "We also believe in the Breaking of Bread as a reminder of the Lord's death and return (Luke 22:19; 1 Corinthians 11:23-26).",
   },
   {
-    id: "spiritual-authority",
-    title: "Spiritual Authority",
+    id: "marriage",
+    title: "Marriage",
     statement:
-      "We believe in the biblical principle of submission to spiritual authority and that church members should respect leadership in matters of church governance, doctrine, and conduct.",
+      "We believe the term “marriage” has only one meaning and that is marriage as instituted by God which joins one man and one woman in a single, exclusive union (Genesis 2:18, 24; Mark 10:6-9).",
   },
   {
-    id: "church",
-    title: "The Church",
+    id: "sexual-conduct",
+    title: "Sexual Conduct",
     statement:
-      "We believe that the one true Church is the whole company of those who have been redeemed by Jesus Christ and regenerated by the Holy Spirit, and that the local church should reflect this spiritual reality. The new birth and personal confession of Christ are essential to church membership.",
+      "We believe that any sexual immorality, such as adultery, fornication, homosexuality, bisexual conduct, bestiality, incest, pornography, or any attempt to change one’s gender, or disagreement with one’s biological gender, is sinful and offensive to God (1 Corinthians 6:9-20; 1 Thessalonians 4:3-5).",
   },
   {
-    id: "baptism-and-communion",
-    title: "Baptism and Communion",
+    id: "service-and-conduct",
+    title: "Service and Conduct",
     statement:
-      "We believe that the Lord Jesus Christ appointed two ordinances: baptism in water and the Lord’s Supper. Baptism is the immersion of the believer in water as a confession of identification with Christ in His death, burial, and resurrection. The Lord’s Supper is the partaking of the emblems representing Christ’s broken body and shed blood, in remembrance of His sacrificial death until He comes.",
+      "We believe that in order to maintain and preserve the function and integrity of the church as the local Body of Christ, and to provide a biblical role model to church members and the community, it is imperative that all persons employed by the church in any capacity, or who serve as volunteers, should abide by and agree to this Statement on Marriage and Sexuality and conduct themselves accordingly (Titus 1:4-9; 1 Timothy 4:12).",
   },
   {
-    id: "divine-healing",
-    title: "Divine Healing",
+    id: "redemption-and-restoration",
+    title: "Redemption and Restoration",
     statement:
-      "We believe that divine healing is taught throughout the Old and New Testaments and is an integral part of the Gospel.",
+      "We believe that God offers redemption and restoration to all who confess and forsake their sin, seeking His mercy and forgiveness through Jesus Christ (1 John 1:9; 2 Chronicles 7:14).",
   },
   {
-    id: "sanctification",
-    title: "Sanctification",
+    id: "compassion-and-dignity",
+    title: "Compassion and Dignity",
     statement:
-      "We believe that the Bible teaches that without holiness no one can see the Lord. We believe in sanctification as a definite yet progressive work of grace, beginning at the new birth and continuing until the completion of salvation.",
-  },
-  {
-    id: "marriage-and-sexual-conduct",
-    title: "Marriage and Sexual Conduct",
-    statement:
-      "We believe that sexual relationships are to be expressed within lawful marriage between a natural man and a natural woman, in accordance with biblical teaching.",
-  },
-  {
-    id: "church-discipline",
-    title: "Church Discipline",
-    statement:
-      "We believe that the leadership of the local church has biblical authority to withdraw membership in cases of serious and unrepentant misconduct or similar cause.",
-  },
-  {
-    id: "continuing-in-truth",
-    title: "Continuing in Truth",
-    statement:
-      "We believe that the Church must remain open to any further truth that the Holy Spirit may illuminate from the Scriptures.",
+      "We believe that every person must be afforded compassion, love, kindness, respect, and dignity. Hateful and harassing behaviour or attitudes toward any individual are to be repudiated and are not in accord with Scripture nor with our church teachings (Galatians 3:27-29; Galatians 5:14; Matthew 7:12).",
   },
 ];

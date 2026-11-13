@@ -21,10 +21,22 @@ export function getYouTubeThumbnailUrl(
 
 export const recentSermons: Sermon[] = [
   {
-    youtubeVideoId: "dStRn1TVVBs",
-    title: "Should I Still Pray If God Only Does His Own Will?",
+    youtubeVideoId: "rPefGhiCQMI",
+    title: "4 Things God Must Not Allow This End of The Year",
     speaker: "Ps. Guelord Lukama",
-    youtubeVideoUrl: "https://youtu.be/dStRn1TVVBs?si=YvBUF49SdMvVrodZ",
+    youtubeVideoUrl: "https://youtu.be/rPefGhiCQMI?si=k8TWdMtk91TxBA5m",
+  },
+  {
+    youtubeVideoId: "z0kefYJQMKY",
+    title: "Walking In Preservation",
+    speaker: "Prt. Esther Lukama",
+    youtubeVideoUrl: "https://youtu.be/z0kefYJQMKY?si=K6XDuEgfX2zi2dTL",
+  },
+  {
+    youtubeVideoId: "15VxxgQjVqE",
+    title: "The Mindset Of Headship",
+    speaker: "Ps. Guelord Lukama",
+    youtubeVideoUrl: "https://youtu.be/15VxxgQjVqE?si=ut12t-pT-tQeASw1",
   },
   {
     youtubeVideoId: "vuMu4SoeQY0",
@@ -33,22 +45,10 @@ export const recentSermons: Sermon[] = [
     youtubeVideoUrl: "https://youtu.be/vuMu4SoeQY0?si=5UK-DYvEpq-9efCu",
   },
   {
-    youtubeVideoId: "r-5_MkrPBcs",
-    title: "Who Is Like You, Lord?",
+    youtubeVideoId: "dStRn1TVVBs",
+    title: "Should I Still Pray If God Only Does His Own Will?",
     speaker: "Ps. Guelord Lukama",
-    youtubeVideoUrl: "https://youtu.be/r-5_MkrPBcs?si=MTDf9JAQ-a874nYv",
-  },
-  {
-    youtubeVideoId: "G3KO9tC5YOs",
-    title: "How Holy Is God?",
-    speaker: "Ps. Guelord Lukama",
-    youtubeVideoUrl: "https://youtu.be/G3KO9tC5YOs?si=Wrezg-k1oMX5wA1O",
-  },
-  {
-    youtubeVideoId: "jHtcveEzqRM",
-    title: "The Omnipotent God",
-    speaker: "Ps. Guelord Lukama",
-    youtubeVideoUrl: "https://youtu.be/jHtcveEzqRM?si=k1AK1IncvsGs8egx",
+    youtubeVideoUrl: "https://youtu.be/dStRn1TVVBs?si=YvBUF49SdMvVrodZ",
   },
 ];
 

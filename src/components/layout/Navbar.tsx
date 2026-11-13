@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -111,7 +112,14 @@ export default function Navbar() {
           className="font-heading text-xl font-bold tracking-wide"
           onClick={() => setIsMenuOpen(false)}
         >
-          RAMAH
+          <Image
+            src="/images/logo/ramah-header-logo.png"
+            alt="The Ramah Church"
+            width={300}
+            height={190}
+            className="h-10 w-auto md:h-12"
+            unoptimized
+          />
         </Link>
 
         <nav aria-label="Primary navigation" className="hidden md:block">
@@ -126,7 +134,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white transition-colors hover:border-[#8D63D2] hover:text-[#C8B2F0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8D63D2] md:hidden"
+          className="inline-flex h-11 w-11 enabled:cursor-pointer items-center justify-center rounded-full border border-white/10 text-white transition-colors hover:border-[#8D63D2] hover:text-[#C8B2F0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8D63D2] md:hidden"
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"

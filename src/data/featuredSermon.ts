@@ -9,13 +9,13 @@ type FeaturedSermon = Sermon & {
   thumbnailUrl: string;
 };
 
-const youtubeVideoId = "f6GpLn_qXog";
+const youtubeVideoId = "qs27jNk2oz4";
 
 export const featuredSermon: FeaturedSermon = {
   youtubeVideoId,
-  title: "God The Maker Of Man",
+  title: "How To Preserve God In My Family",
   speaker: "Ps Guelord Lukama",
-  youtubeVideoUrl: "https://youtu.be/f6GpLn_qXog?si=e1f3yAFUKKs3VT5_",
+  youtubeVideoUrl: "https://youtu.be/qs27jNk2oz4?si=dq_ErZVIh4pH7LHk",
   youtubeChannelUrl: "https://www.youtube.com/@THERAMAHCHURCH",
   sermonsPageUrl: "/sermons",
   thumbnailUrl: getYouTubeThumbnailUrl(youtubeVideoId),

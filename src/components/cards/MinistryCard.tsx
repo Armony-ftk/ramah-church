@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import Button from "@/components/ui/Button";
+import Reveal from "@/components/ui/Reveal";
 import type { Ministry } from "@/data/ministries";
 
 type MinistryCardProps = {
@@ -15,9 +16,10 @@ export default function MinistryCard({
   ctaLabel = "Learn More",
 }: MinistryCardProps) {
   return (
-    <article
+    <Reveal
+      as="article"
       className={[
-        "flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-[#16161D] shadow-[0_24px_80px_rgba(0,0,0,0.28)] transition-transform duration-300 hover:-translate-y-1",
+        "flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-[#16161D] shadow-[0_24px_80px_rgba(0,0,0,0.28)] transition-transform duration-300 motion-safe:hover:-translate-y-1 motion-reduce:translate-y-0 motion-reduce:transition-none",
         className,
       ]
         .filter(Boolean)
@@ -29,7 +31,7 @@ export default function MinistryCard({
           alt={`${ministry.title} ministry at The RAMAH Church`}
           fill
           sizes="(min-width: 1280px) 264px, (min-width: 768px) 50vw, 100vw"
-          className="object-cover transition-transform duration-500 hover:scale-[1.03]"
+          className="object-cover transition-transform duration-500 motion-safe:hover:scale-[1.03] motion-reduce:scale-100 motion-reduce:transition-none"
         />
       </div>
 
@@ -51,6 +53,6 @@ export default function MinistryCard({
           </Button>
         </div>
       </div>
-    </article>
+    </Reveal>
   );
 }

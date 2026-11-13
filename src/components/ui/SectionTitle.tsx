@@ -1,3 +1,5 @@
+import Reveal from "@/components/ui/Reveal";
+
 type SectionTitleProps = {
   eyebrow?: string;
   title: string;
@@ -14,7 +16,7 @@ export default function SectionTitle({
   className = "",
 }: SectionTitleProps) {
   return (
-    <div
+    <Reveal
       className={["max-w-3xl", centered && "mx-auto text-center", className]
         .filter(Boolean)
         .join(" ")}
@@ -32,6 +34,6 @@ export default function SectionTitle({
           {eyebrow}
         </p>
       ) : null}
-    </div>
+    </Reveal>
   );
 }

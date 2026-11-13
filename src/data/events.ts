@@ -10,21 +10,21 @@ export type Event = {
 
 export const events: Event[] = [
   {
-    title: "MASTERCLASS: The Believer in the Marketplace",
-    date: "2026-07-11",
-    time: "11 July 2026 • 09:00 AM",
+    title: "Ebenezer Convocation",
+    date: "2026-11-25",
+    time: "25-29 November 2026 • 05:30 PM",
     description:
-      "A practical teaching session designed to equip believers to represent Christ with excellence, wisdom, and influence in the workplace, business, school, and every sphere of society.",
-    image: "/images/events/ramah-masterclass.jpg",
-    category: "Masterclass",
+      'Join us for Ebenezer Convocation, a special gathering themed "The Mystery of Thanksgiving," featuring guest speaker Bishop Samuel Ade from Ivory Coast.',
+    image: "/images/events/ramah-worship-night.jpg",
+    category: "Special Service",
   },
   {
-    title: "RAMAH Worship Live Recording",
-    date: "2026-09-05",
-    time: "5 September 2026 • 06:00 PM",
+    title: "Servants Retreat",
+    date: "2026-11-29",
+    time: "29 Nov 2026 - 03 Dec 2026",
     description:
-      "Join RAMAH Worship for a powerful live recording experience filled with praise, worship, and moments of deep encounter in God's presence.",
-    image: "/images/events/ramah-worship-night.jpg",
-    category: "Worship",
+      "A dedicated time for the servants of The RAMAH Church to step away, seek God together, be renewed in His presence, and return strengthened, refreshed, and ready to serve with renewed passion.",
+    image: "/images/events/servant-retreat.jpeg",
+    category: "Retreat",
   },
 ];
