@@ -15,9 +15,15 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "The RAMAH Church",
+  title: {
+    default: "The RAMAH Church",
+    template: "%s | The RAMAH Church",
+  },
   description:
     "The official website of The RAMAH Church. Discover who we are, explore sermons and ministries, give, and connect with us.",
+  appleWebApp: {
+    title: "RAMAH",
+  },
 };
 
 export default function RootLayout({

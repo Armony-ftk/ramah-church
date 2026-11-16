@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
+
 import HowToGiveSection from "@/components/sections/give/HowToGiveSection";
 import PageHero from "@/components/sections/PageHero";
+
+export const metadata: Metadata = {
+  title: "Give",
+  description:
+    "Learn how to give to The RAMAH Church and support its mission through our available giving methods.",
+};
 
 export default function GivePage() {
   return (

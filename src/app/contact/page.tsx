@@ -6,7 +6,7 @@ import PageHero from "@/components/sections/PageHero";
 import { contactPageContent } from "@/data/contact";
 
 export const metadata: Metadata = {
-  title: "Contact Us | The RAMAH Church",
+  title: "Contact Us",
   description:
     "Contact The RAMAH Church, connect with our team, follow us online, or find directions to our church in Ruimsig, Roodepoort.",
 };

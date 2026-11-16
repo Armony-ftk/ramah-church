@@ -47,7 +47,7 @@ export async function generateMetadata({
   const ministry = getDetailedMinistry(slug);
 
   return {
-    title: `${ministry.title} | The RAMAH Church`,
+    title: ministry.title,
     description: ministry.description,
   };
 }

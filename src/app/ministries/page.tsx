@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
+
 import MinistryOverviewSection from "@/components/sections/ministries/MinistryOverviewSection";
 import MinistriesGridSection from "@/components/sections/MinistriesGridSection";
 import PageHero from "@/components/sections/PageHero";
 import { ministriesPageContent } from "@/data/ministries";
+
+export const metadata: Metadata = {
+  title: "Ministries",
+  description:
+    "Discover ministries at The RAMAH Church where children, young people, women, and men can grow in faith and community.",
+};
 
 export default function MinistriesPage() {
   const { hero, overview } = ministriesPageContent;
