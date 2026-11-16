@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
@@ -10,6 +10,46 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import { events, type Event } from "@/data/events";
 
 const INITIAL_EVENT_COUNT = 2;
+const johannesburgDateFormatter = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Africa/Johannesburg",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+function getJohannesburgToday() {
+  const parts = johannesburgDateFormatter.formatToParts(new Date());
+  const getPart = (type: string) => parts.find((part) => part.type === type)!.value;
+
+  return `${getPart("year")}-${getPart("month")}-${getPart("day")}`;
+}
+
+function subscribeToDateChange(onDateChange: () => void) {
+  let timeoutId: ReturnType<typeof setTimeout>;
+
+  const scheduleNextDay = () => {
+    clearTimeout(timeoutId);
+    // Johannesburg is UTC+02:00 year-round; 22:00 UTC starts the next local day.
+    const nextMidnight = Date.parse(`${getJohannesburgToday()}T22:00:00Z`);
+    timeoutId = setTimeout(() => {
+      onDateChange();
+      scheduleNextDay();
+    }, Math.max(0, nextMidnight - Date.now()));
+  };
+
+  const refresh = () => {
+    onDateChange();
+    scheduleNextDay();
+  };
+
+  scheduleNextDay();
+  document.addEventListener("visibilitychange", refresh);
+
+  return () => {
+    clearTimeout(timeoutId);
+    document.removeEventListener("visibilitychange", refresh);
+  };
+}
 
 function EventCard({ event }: { event: Event }) {
   return (
@@ -56,15 +96,24 @@ function EventCard({ event }: { event: Event }) {
 
 export default function UpcomingEventsSection() {
   const [showAllEvents, setShowAllEvents] = useState(false);
+  const today = useSyncExternalStore(
+    subscribeToDateChange,
+    getJohannesburgToday,
+    () => null,
+  );
 
   const sortedEvents = useMemo(
     () =>
-      [...events].sort(
-        (firstEvent, secondEvent) =>
-          new Date(firstEvent.date).getTime() -
-          new Date(secondEvent.date).getTime(),
-      ),
-    [],
+      events
+        .filter(
+          (event) => today !== null && (event.endDate ?? event.date) >= today,
+        )
+        .sort(
+          (firstEvent, secondEvent) =>
+            new Date(firstEvent.date).getTime() -
+            new Date(secondEvent.date).getTime(),
+        ),
+    [today],
   );
 
   const visibleEvents = showAllEvents
@@ -80,7 +129,7 @@ export default function UpcomingEventsSection() {
           centered
         />
 
-        {sortedEvents.length === 0 ? (
+        {today !== null && (sortedEvents.length === 0 ? (
           <div className="mt-10 text-center">
             <p className="text-base font-semibold text-[#F7F2FF]">
               No upcoming events at the moment.
@@ -99,7 +148,7 @@ export default function UpcomingEventsSection() {
               <EventCard key={`${event.date}-${event.title}`} event={event} />
             ))}
           </div>
-        )}
+        ))}
 
         {sortedEvents.length > INITIAL_EVENT_COUNT && (
           <div className="mt-9 flex justify-center">
